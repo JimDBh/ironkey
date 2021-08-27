@@ -3,14 +3,14 @@
 This package provides functions to protect certain key-bindings in certain
 keymaps. It mainly does this in two ways when ironkey-mode is enabled:
 
-* For each `(key . map)` pair in ironkey-iron-alist, if there's an attempt to
-  bind KEY in MAP to a different value, ironkey will not perform such binding.
-  When MAP is nil, ironkey protects KEY in `global-map`.
+* For each `(key . map)` pair in `ironkey-iron-alist`, if there's an attempt to
+  bind `key` in `map` to a different value, ironkey will not perform such binding.
+  When `map` is nil, ironkey protects `key` in `global-map`.
 
-* To avoid clashing of minor mode maps, local map and global map, ironkey
-  will also, for each of the `(key . map)` pairs, force the binding of KEY in MAP
-  to have higher priority when MAP is active in the current buffer.  This is
-  done by the `ironkey-update` function, which can also be called to manually
+* To avoid clashing among minor mode maps, the local map and the global map, ironkey
+  will also, for each of the `(key . map)` pairs, force the binding of `key` in `map`
+  to have higher priority when `map` is active in the current buffer.  This is
+  done by the `ironkey-update` function, which can also be called manually to
   refresh the status.
 
 ## Installation
@@ -39,8 +39,8 @@ Example using `straight` and `use-package`:
 ## Usage
 
 The custom variable `ironkey-iron-alist` should be set as an alist of `(key . map)`
-pairs. Note KEY should be an internal representation of the key
-combo, which can usually be obtained by the kbd function. For example:
+pairs. Note `key` should be an internal representation of the key
+combo, which can usually be obtained by the `kbd` function. For example:
 
 ```lisp
 (setq ironkey-iron-alist `((,(kbd "M-.") . nil)
