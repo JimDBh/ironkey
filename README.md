@@ -25,15 +25,14 @@ Example using `straight` and `use-package`:
 
 ```lisp
 (use-package ironkey
-    :straight (:type git :host github :repo "TODO: repo")
-    :demand t
-    :hook ((after-init . ironkey-update))
-
-    :config
-    (setq ironkey-iron-alist `((,(kbd "M-.") . nil) ;; command in global-map
-                               (,(kbd "C-x p") . nil) ;; prefix keymap in global-map
-                               (,(kbd "<tab>") . company-mode))) ;; command in minor mode map
-    (ironkey-mode t))
+  :straight (:type git :host github :repo "JimDBh/ironkey")
+  :demand t
+  :hook ((after-init . ironkey-update))
+  :config
+  (setq ironkey-iron-alist `((,(kbd "M-.") . nil) ;; command in global-map
+                             (,(kbd "C-x p") . nil) ;; prefix keymap in global-map
+                             (,(kbd "<tab>") . company-mode))) ;; command in minor mode map
+  (ironkey-mode t))
 ```
 
 ## Usage
@@ -44,7 +43,7 @@ combo, which can usually be obtained by the `kbd` function. For example:
 
 ```lisp
 (setq ironkey-iron-alist `((,(kbd "M-.") . nil)
-    (,(kbd "<tab>") . company-mode-map)))
+                           (,(kbd "<tab>") . company-mode-map)))
 ```
 
 Next just simply turn on the global `ironkey-mode`.
