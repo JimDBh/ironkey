@@ -102,7 +102,7 @@ or set to nil to suppress any messages."
           (advice-add 'define-key :around #'ironkey-define-key))
       (ironkey-msg "Ironkey-mode not activated."))))
 
-(defun ironkey-define-key (orig-fun keymap key def)
+(defun ironkey-define-key (orig-fun keymap key def &optional rest)
   "Function used to advice the ORIG-FUN 'define-key'.
 The definitions of KEYMAP, KEY and DEF can be found in
 function 'define-key'.  This function protects the key-bindings listed in
